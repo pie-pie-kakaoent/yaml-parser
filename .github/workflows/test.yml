@@ -12,13 +12,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          npm install
+          npm ci
       - run: |
-          npm run all
+          npm run test
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
+      - name: Load config
+        id: config
+        uses: ./
         with:
-          milliseconds: 1000
+          filename: test.yaml
+
+      - name: Show output
+        run: |
+          echo "workloadIdentityProvider: ${{ steps.config.outputs.workloadIdentityProvider }}"
+          echo "cloudrun_env_vars: ${{ steps.config.outputs.cloudrun_env_vars }}"
+          echo "object.key1: ${{ steps.config.outputs.object_key1 }}"
+          echo "object.key2[0]: ${{ steps.config.outputs.object_key2_0 }}"
+          echo "object.key2[1]: ${{ steps.config.outputs.object_key2_1 }}"
