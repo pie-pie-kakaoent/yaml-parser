@@ -28,7 +28,7 @@ jobs:
       - name: Show output
         run: |
           echo "workloadIdentityProvider: ${{ steps.config.outputs.workloadIdentityProvider }}"
-          echo "cloudrun_env_vars: ${{ steps.config.outputs.cloudrun_env_vars }}"
+          echo "cloudrun_env_vars: ${{ steps.config.outputs.cloudrun_env_vars_0 }}"
           echo "object.key1: ${{ steps.config.outputs.object_key1 }}"
           echo "object.key2[0]: ${{ steps.config.outputs.object_key2_0 }}"
           echo "object.key2[1]: ${{ steps.config.outputs.object_key2_1 }}"
