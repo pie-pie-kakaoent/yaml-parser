@@ -2,7 +2,7 @@ name: 'yaml-parser'
 description: 'Simple YAML parser for Github Action'
 author: 'Kyungmin Lee'
 inputs:
-  file:
+  filename:
     required: true
     description: 'file path'
 runs:
