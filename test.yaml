@@ -1,0 +1,8 @@
+workloadIdentityProvider: 'woooo'
+cloudrun_env_vars:
+  - 'foo=bar'
+object:
+  key1: 'value'
+  key2:
+    - 'a'
+    - 2
